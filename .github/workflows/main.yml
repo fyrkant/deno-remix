@@ -35,4 +35,4 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: famous-ferret-82 # the name of the project on Deno Deploy
-          entrypoint: main.ts # the entrypoint to deploy
+          entrypoint: build/index.js # the entrypoint to deploy
