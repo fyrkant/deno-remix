@@ -30,10 +30,11 @@ jobs:
           cache: 'npm'
       - run: npm install
       - run: npm run build
-
-      - name: Deploy to Deno Deploy
-        uses: denoland/deployctl@v1
+        
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1.1.0
+        
+      - run: deno install --allow-read --allow-write --allow-env --allow-net --allow-run --no-check -r -f https://deno.land/x/deploy/deployctl.ts
+ 
       - run: deployctl deploy --prod --include=build,public --project=mattias-codes ./build/index.js
-#         with:
-#           project: mattias-codes # the name of the project on Deno Deploy
-#           entrypoint: build/index.js # the entrypoint to deploy
+        
