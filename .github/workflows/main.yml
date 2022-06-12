@@ -34,5 +34,5 @@ jobs:
       - name: Deploy to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: famous-ferret-82 # the name of the project on Deno Deploy
+          project: mattias-codes # the name of the project on Deno Deploy
           entrypoint: build/index.js # the entrypoint to deploy
